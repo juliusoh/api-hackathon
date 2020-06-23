@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #344a72;
+  color: #fff;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+}
+.container > h1 {
+  margin: 5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+#inputValue {
+  height: 45px;
+  border: none;
+  width: 40vh;
+  font-size: 15px;
+  outline: none;
+  margin: 5px;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+input:hover {
+  border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+input:focus {
+  border-color:#4d90fe;
+}
+
+#search {
+  background-color:#49c1a2;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+#search:hover {
+  background:#37a08e;
+}
+
+#movies-searchable {
+  margin-top: 20px;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+}
+
+section img {
+  width: 300px;
+  transition: 250ms all;
+}
+
+img:hover {
+  margin-left: 0 40px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.content {
+  border: 1px solid red;
+  display: none;
+}
+
+.content-display {
+  display: block;
+}
