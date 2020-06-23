@@ -8,19 +8,33 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-movie-info"></div>
+    </div>
+  
+  </div>
   <div class="container">
     <h1>Movie Search App</h1>
     <form action="">
       <div class="form-group">
-        <input type="text" id="inputValue" placeholder="Enter Movie/TV Show Title">
+        <input type="text" id="inputValue" placeholder="Enter Movie/TV Show Title" required>
       </div>
       
       <button type="submit" id="search">Search A Movie</button>
     </form>
+    <div id="movies-searchable"></div>
+    <div id="movies-container"></div>
+    </div>
   </div>
 
-  <div id="movies-searchable"></div>
+  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="./assets/js/apiTransaction.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
 </html>
