@@ -1,9 +1,9 @@
-const API_KEY = '37bdb8486fb959414ee9164606b9ea9a';
-const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
-const url = 'https://api.themoviedb.org/3/search/movie?api_key=37bdb8486fb959414ee9164606b9ea9a';
+const API_KEY = '37bdb8486fb959414ee9164606b9ea9a'
+const IMAGE_URL = 'https://image.tmdb.org/t/p/w500'
+const url = 'https://api.themoviedb.org/3/search/movie?api_key=37bdb8486fb959414ee9164606b9ea9a'
 
 function generateUrl(path) {
-  const url = `https://api.themoviedb.org/3${path}?api_key=37bdb8486fb959414ee9164606b9ea9a`;
+  const url = `https://api.themoviedb.org/3${path}?api_key=37bdb8486fb959414ee9164606b9ea9a`
   return url;
 }
 
@@ -12,6 +12,7 @@ function requestMovies(url, searchSuccess, searchError, header) {
     method: "GET",
     url: url,
     success: (info) => {
+      //console.log(info);
       searchSuccess(info, header);
      
     },
