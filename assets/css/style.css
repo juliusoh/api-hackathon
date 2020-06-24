@@ -6,12 +6,19 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: #344a72;
+  background:#696969;
   color: #fff;
   line-height: 1.8;
   text-align: center;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
 .container {
   padding: 20px;
   margin: 0 auto;
@@ -47,7 +54,7 @@ input:focus {
   border: none;
   color: #fff;
   font-size: 18px;
-  padding: 10px 20px;
+  padding: 5px 15px;
   margin: 5px;
   border-radius: 5px;
   outline: none;
@@ -97,13 +104,17 @@ img:hover {
 }
 
 iframe {
-  
+  margin-top: 10px;
 }
 
-
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .modal {
-  display: none; /*Hidden by default*/
+  display: none; 
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -113,11 +124,16 @@ iframe {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color: black;
+}
+
+#movie-info {
+  color: black;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #e9e6e6;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -126,10 +142,10 @@ iframe {
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: rgb(0, 0, 0);
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: bolder;
 }
 
 .close:hover,
@@ -137,4 +153,14 @@ iframe {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  #movie-info img{
+    width: 200px;
+  }
+
+  iframe {
+    width: 300px;
+  }
 }
