@@ -6,12 +6,19 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: #344a72;
+  background:#696969;
   color: #fff;
   line-height: 1.8;
   text-align: center;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
 .container {
   padding: 20px;
   margin: 0 auto;
@@ -47,7 +54,7 @@ input:focus {
   border: none;
   color: #fff;
   font-size: 18px;
-  padding: 10px 20px;
+  padding: 5px 15px;
   margin: 5px;
   border-radius: 5px;
   outline: none;
@@ -137,8 +144,8 @@ iframe {
 .close {
   color: rgb(0, 0, 0);
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: bolder;
 }
 
 .close:hover,
@@ -148,12 +155,12 @@ iframe {
   cursor: pointer;
 }
 
-@media(min-width:500px){
+@media only screen and (max-width: 500px) {
   #movie-info img{
-    height: 200px;
+    width: 200px;
   }
 
-  #movies .col-md-3 img{
-    height:240px;
+  iframe {
+    width: 300px;
   }
 }

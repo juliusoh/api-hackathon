@@ -18,7 +18,7 @@ const movieClick = (event) => {
   const imdbID = target.dataset.imdbID
 
   //console.log(target);
-  console.log(movieId);
+  //console.log(movieId);
   const section = event.target.parentElement; //section
   //console.log(section);
   const content = section.nextElementSibling; //content
@@ -32,7 +32,7 @@ const movieClick = (event) => {
     method: "GET",
     url: url,
     success: (info) => {
-      console.log('videos:', info);
+      //console.log('videos:', info);
       createVideoTemplate(info, content)
     },
     error: searchError
@@ -48,11 +48,11 @@ const movieClick = (event) => {
         method: "GET",
         url: `http://www.omdbapi.com/?i=${imdbID}&apikey=91abbf4a`,
         success: (info) => {
-          console.log(info);
+          //console.log(info);
           const poster = info.Poster
 
           for(key in info) {
-            console.log(key, info[key]);
+            //console.log(key, info[key]);
             if (document.getElementsByClassName(key).length > 0) {
               document.getElementsByClassName(key)[0].textContent = info[key];
             }
@@ -109,7 +109,7 @@ function movieSection(movies) {
 }
 
 function createMovieContainer(movies, header) {
-  console.log(movies);
+  //console.log(movies);
   const movieElement = document.createElement('div');
   movieElement.setAttribute('class', 'movie');
   const content = document.createElement('div');
@@ -175,7 +175,7 @@ function createVideoTemplate(info, content) {
 function createIframe(video) {
   const iframe = document.createElement('iframe');
   iframe.src = `https://www.youtube.com/embed/${video.key}`;
-  console.log(iframe.src);
+  //console.log(iframe.src);
   iframe.width = 360;
   iframe.height = 315;
   iframe.allowFullscreen = true;
@@ -183,8 +183,10 @@ function createIframe(video) {
   return iframe;
 }
 
+
 getUpcomingMovies();
 getTopRatedMovies();
+getNowPlayingMovies();
 getPopularMovies();
 
 

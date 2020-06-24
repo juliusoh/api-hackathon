@@ -26,6 +26,12 @@ function searchMovie(value) {
   requestMovies(url, renderSearchMovies, searchError);
 }
 
+function getNowPlayingMovies() {
+  const path = '/movie/now_playing';
+  const url = generateUrl(path);
+  requestMovies(url, renderMovies, searchError, 'Now Playing Movies');
+}
+
 function getUpcomingMovies() {
   const path = '/movie/upcoming';
   const url = generateUrl(path);
