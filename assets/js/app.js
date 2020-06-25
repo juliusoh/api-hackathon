@@ -32,7 +32,7 @@ const movieClick = (event) => {
     method: "GET",
     url: url,
     success: (info) => {
-      //console.log('videos:', info);
+      console.log('videos:', info);
       createVideoTemplate(info, content)
     },
     error: searchError
@@ -46,7 +46,7 @@ const movieClick = (event) => {
       
       $.ajax({
         method: "GET",
-        url: `http://www.omdbapi.com/?i=${imdbID}&apikey=91abbf4a`,
+        url: `https://www.omdbapi.com/?i=${imdbID}&apikey=91abbf4a`,
         success: (info) => {
           //console.log(info);
           const poster = info.Poster
@@ -58,7 +58,7 @@ const movieClick = (event) => {
             }
           }
           const movieLink = document.getElementById('movie-link')
-          movieLink.setAttribute('href', `http://imdb.com/title/${imdbID}`)
+          movieLink.setAttribute('href', `https://imdb.com/title/${imdbID}`)
           const posterDiv = document.getElementById('modal-poster')
           posterDiv.setAttribute('src', poster)
         },
@@ -175,7 +175,7 @@ function createVideoTemplate(info, content) {
 function createIframe(video) {
   const iframe = document.createElement('iframe');
   iframe.src = `https://www.youtube.com/embed/${video.key}`;
-  //console.log(iframe.src);
+  console.log(iframe.src);
   iframe.width = 360;
   iframe.height = 315;
   iframe.allowFullscreen = true;
