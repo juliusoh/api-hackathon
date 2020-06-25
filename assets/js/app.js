@@ -58,6 +58,18 @@ const movieClick = (event) => {
     },
 
   })
+  $.ajax({
+    method: "GET",
+    url: `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=37bdb8486fb959414ee9164606b9ea9a`,
+    success: (info) => {
+      console.log(info);
+      const review = info.results[0].url;
+      console.log(review);
+      //document.getElementById('review').textContent = review;
+      const reviewLink = document.getElementById('reviewBtn');
+      reviewLink.setAttribute('href', review);
+    }
+  });
   if (target.id === 'content-close') {
     const content = target.parentElement;
     content.classList.remove('content-display');
