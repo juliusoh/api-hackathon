@@ -163,4 +163,19 @@ iframe {
   iframe {
     width: 250px;
   }
+
+  .btn {
+    margin: 5px;
+  }
+}
+
+@media(min-width: 501px) and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-4 {
+    right: 50px;
+    margin-bottom: 10px;
+  }
 }
