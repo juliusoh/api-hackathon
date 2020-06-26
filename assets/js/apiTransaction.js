@@ -8,13 +8,14 @@ function generateUrl(path) {
 }
 
 function requestMovies(url, searchSuccess, searchError, header) {
+  $('.ajaxProgress').show();
   $.ajax({
     method: "GET",
     url: url,
     success: (info) => {
       //console.log(info);
       searchSuccess(info, header);
-
+      $('.ajaxProgress').hide();
     },
     error: searchError
   })
@@ -57,12 +58,7 @@ function getPopularMovies() {
   requestMovies(url, renderMovies, searchError, 'Popular Movies');
 }
 
-// function getLatestMovies() {
-//   const path = '/movie/latest';
-//   const url = generateUrl(path);
-//   requestMovies(url, renderMovies, searchError, 'Latest Movies');
-// }
-
+//   
 window.addEventListener('DOMContentLoaded', (event) => {
   var modal = document.getElementById("myModal");
   // Get the <span> element that closes the modal

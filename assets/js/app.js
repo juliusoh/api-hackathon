@@ -80,11 +80,24 @@ const movieClick = (event) => {
 searchButton.onclick = (e) => {
   e.preventDefault();
   const value = inputElement.value;
+  const errorMsg = document.querySelector('.error');
+  if (value === '') {
+    inputElement.classList.add('invalid');
+    errorMsg.style.display = 'block';
+    return
+  } 
+
   searchMovie(value);
   inputElement.value = '';
   //console.log(`value: ${value}`);
 }
 
+
+inputElement.addEventListener('change', (e) => {
+  const errorMsg = document.querySelector('.error');
+  errorMsg.style.display = 'none';
+  inputElement.classList.remove('invalid');
+})
 
 function movieSection(movies) {
   const section = document.createElement('section');
