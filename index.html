@@ -13,7 +13,7 @@
 
 <body>
   <div id="myModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content modal-fullscreen">
       <span class="close">&times;</span>
       <div class="container">
         <div class="row">
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="row">
-        <div>
+        <div class="plot">
           <h3><strong>Plot</strong></h3>
           <span class="Plot"></span>
           <hr>
@@ -58,12 +58,13 @@
       </div>
       <p class="error">Field must require input!</p>
       <button type="submit" id="search">Search A Movie</button>
-      
     </form>
     <div class="ajaxProgress">
       <div class="loader"></div>
     </div>
-    <div id="movies-searchable"></div>
+   
+    <div id="movies-searchable"><span id="error"></span></div>
+    <span id="searchError"></span>
     <div id="movies-container"></div>
   </div>
   </div>
@@ -72,8 +73,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  <script src="./assets/js/apiTransaction.js"></script>
-  <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/apiTransaction.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>

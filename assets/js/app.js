@@ -77,7 +77,7 @@ const movieClick = (event) => {
 
 }
 
-searchButton.onclick = (e) => {
+searchButton.addEventListener('click', (e) => {
   e.preventDefault();
   const value = inputElement.value;
   const errorMsg = document.querySelector('.error');
@@ -90,7 +90,7 @@ searchButton.onclick = (e) => {
   searchMovie(value);
   inputElement.value = '';
   //console.log(`value: ${value}`);
-}
+})
 
 
 inputElement.addEventListener('change', (e) => {
@@ -106,9 +106,9 @@ function movieSection(movies) {
     if (movie.poster_path) {
       const img = document.createElement('img');
       img.addEventListener('click', movieClick);
-      img.onclick = function () {
-        modal.style.display = "block";
-      }
+      // img.onclick = function () {
+      //   modal.style.display = "block";
+      // }
       img.src = IMAGE_URL + movie.poster_path;
       //img['data-movie-id'] = IMAGE_URL + movie.poster_path;
       img.setAttribute('data-movie-id', movie.id);
@@ -161,6 +161,10 @@ function searchSuccess(data) {
 
 function searchError(error) {
   console.log("Error:", error);
+  $('.ajaxProgress').hide();
+  const spanError = document.getElementById('error');
+  spanError.textContent = `Sorry Something's Wrong We're working on it! ${error.statusText}`;
+  spanError.style.display = 'block'
 }
 
 function createVideoTemplate(info, content) {
@@ -176,6 +180,7 @@ function createVideoTemplate(info, content) {
     iframeContainer.appendChild(iframe);
     modalMovie.appendChild(iframeContainer);
   }
+  modal.style.display = 'block'
 }
 
 function createIframe(video) {

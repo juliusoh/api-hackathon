@@ -1,20 +1,29 @@
 const API_KEY = '37bdb8486fb959414ee9164606b9ea9a';
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 const url = 'https://api.themoviedb.org/3/search/movie?api_key=37bdb8486fb959414ee9164606b9ea9a';
+let searchTerm = null
 
 function generateUrl(path) {
   const url = `https://api.themoviedb.org/3${path}?api_key=37bdb8486fb959414ee9164606b9ea9a`
   return url;
 }
 
-function requestMovies(url, searchSuccess, searchError, header) {
+function requestMovies(url, searchSuccess, searchError, header, value) {
   $('.ajaxProgress').show();
+  searchTerm = value
   $.ajax({
     method: "GET",
     url: url,
     success: (info) => {
-      //console.log(info);
+      console.log(info);
       searchSuccess(info, header);
+      if (info.results.length === 0 && value) {
+        const searchError = document.querySelector('#searchError');
+        //console.log(searchError);
+        console.log(value)
+        searchError.textContent = `No results found for "${value}"`;
+        searchError.style.display = 'block'
+      }
       $('.ajaxProgress').hide();
     },
     error: searchError
@@ -23,9 +32,11 @@ function requestMovies(url, searchSuccess, searchError, header) {
 
 
 function searchMovie(value) {
+  console.log(value)
   const path = '/search/movie';
   const url = generateUrl(path) + '&query=' + value;
-  requestMovies(url, renderSearchMovies, searchError);
+
+  requestMovies(url, renderSearchMovies, searchError, null, value);
 }
 
 function getNowPlayingMovies() {

@@ -38,6 +38,10 @@ body {
   padding-left: 20px;
 }
 
+.btn {
+  margin: 5px;
+}
+
 input:hover {
   border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
 }
@@ -127,14 +131,19 @@ iframe {
   color: black;
 }
 
+.plot {
+  margin-bottom: 15px;
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #e9e6e6;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto; /*15% from the top and centered*/
   padding: 20px;
   border: 1px solid #888;
   width: 100%; /* Could be more or less, depending on screen size */
 }
+
 
 /* The Close Button */
 .close {
@@ -182,6 +191,19 @@ iframe {
   color: #f53e3e;
   font-weight: bold;
   display: none;
+}
+
+#error {
+  display: none;
+  font-size: 30px;
+  color: #cdeb25
+}
+
+#searchError {
+  display: none;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #cdeb25
 }
 
 @media only screen and (max-width: 500px) {
