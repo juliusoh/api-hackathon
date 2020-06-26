@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background:#696969;
+  background: #141414;
   color: #fff;
   line-height: 1.8;
   text-align: center;
@@ -50,9 +50,10 @@ input:focus {
 }
 
 #search {
-  background-color:#49c1a2;
+  background-color: #E50914;
   border: none;
   color: #fff;
+  font-weight: bolder;
   font-size: 18px;
   padding: 5px 15px;
   margin-top: 10px;
@@ -61,6 +62,10 @@ input:focus {
   cursor: pointer;
 }
 
+.navbar {
+  font-weight: bolder;
+  background-color: #E50914;
+}
 #search:hover {
   background:#37a08e;
 }
