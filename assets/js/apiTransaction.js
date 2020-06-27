@@ -88,3 +88,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+
+  // //initialize swiper when document ready
+  // var Swiper = new Swiper ('.swiper-container', {
+  //   // Optional parameters
+  //   slidesPerView: 6,
+  //   spaceBetween: 10,
+  //   slidesPerGroup: 2,
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
+  // })
+
+  
