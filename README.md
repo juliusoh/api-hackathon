@@ -1,5 +1,5 @@
 # api-hackathon
-A hackathon project utilizing the data from two public APIs to create a Movie App that fetches movie data from the OMBDb API and THEMOVIEDB API.
+A hackathon project utilizing the data from two public APIs to create a Movie App that fetches movie data from the OMBDb API and THEMOVIEDB API which displays information about most popular movies and other categories.
 
 
 Feature List:
