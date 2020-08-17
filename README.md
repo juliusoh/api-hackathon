@@ -1,6 +1,8 @@
 # IMDB Clone
 A front-end JavaScript application utilizing the data from two public APIs to create a Movie App that fetches movie data from the OMBDb API and theMovieDB API which displays information about most popular movies and other categories.
 
+[LiveSite](http://imdb.juliusoh.com)
+
 
 # Features
 1. User can view multiple movies according to categories
