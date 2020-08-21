@@ -87,11 +87,11 @@ section img {
   transition: 250ms all;
 }
 
-img:hover {
+/* img:hover {
   margin-left: 0 40px;
   transform: scale(1.2);
   cursor: pointer;
-}
+} */
 
 .content {
   border: 1px solid red;
@@ -119,7 +119,7 @@ iframe {
 }
 
 .modal {
-  display: none; 
+  display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
