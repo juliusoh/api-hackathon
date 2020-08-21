@@ -23,7 +23,6 @@ const movieClick = (event) => {
     method: "GET",
     url: url,
     success: (info) => {
-      //console.log('videos:', info);
       createVideoTemplate(info, content);
     },
     error: searchError
@@ -62,9 +61,8 @@ const movieClick = (event) => {
     method: "GET",
     url: `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=37bdb8486fb959414ee9164606b9ea9a`,
     success: (info) => {
-      console.log(info);
-      const review = info.results[0].url;
-      console.log(review);
+    const review = info.results[0].url;
+
       //document.getElementById('review').textContent = review;
       const reviewLink = document.getElementById('reviewBtn');
       reviewLink.setAttribute('href', review);
@@ -85,7 +83,7 @@ searchButton.addEventListener('click', (e) => {
     inputElement.classList.add('invalid');
     errorMsg.style.display = 'block';
     return
-  } 
+  }
 
   searchMovie(value);
   inputElement.value = '';
@@ -174,12 +172,14 @@ function createVideoTemplate(info, content) {
   const videos = info.results;
   const length = videos.length > 4 ? 4 : videos.length;
   const iframeContainer = document.createElement('div');
+  iframeContainer.innerHTML = '<h2><strong>Trailer:</strong></h2>'
   for (let i = 0; i < length; i++) {
-    const video = videos[i]; // video
-    const iframe = createIframe(video);
-    iframeContainer.appendChild(iframe);
-    modalMovie.appendChild(iframeContainer);
-  }
+      const video = videos[i]; // video
+      const iframe = createIframe(video);
+      iframeContainer.appendChild(iframe);
+      modalMovie.appendChild(iframeContainer);
+    }
+
   modal.style.display = 'block'
 }
 

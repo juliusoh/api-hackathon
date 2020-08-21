@@ -15,7 +15,6 @@ function requestMovies(url, searchSuccess, searchError, header, value) {
     method: "GET",
     url: url,
     success: (info) => {
-      console.log(info);
       searchSuccess(info, header);
       if (info.results.length === 0 && value) {
         const searchError = document.querySelector('#searchError');
@@ -69,7 +68,7 @@ function getPopularMovies() {
   requestMovies(url, renderMovies, searchError, 'Popular Movies');
 }
 
-//   
+//
 window.addEventListener('DOMContentLoaded', (event) => {
   var modal = document.getElementById("myModal");
   // Get the <span> element that closes the modal
@@ -101,4 +100,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
   //   },
   // })
 
-  
