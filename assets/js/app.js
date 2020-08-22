@@ -50,6 +50,7 @@ const movieClick = (event) => {
           movieLink.setAttribute('href', `https://imdb.com/title/${imdbID}`);
           const posterDiv = document.getElementById('modal-poster');
           posterDiv.setAttribute('src', poster);
+
         },
 
       })

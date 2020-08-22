@@ -87,11 +87,13 @@ section img {
   transition: 250ms all;
 }
 
-/* img:hover {
+section img:hover {
   margin-left: 0 40px;
   transform: scale(1.2);
   cursor: pointer;
-} */
+}
+
+
 
 .content {
   border: 1px solid red;
