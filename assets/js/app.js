@@ -62,11 +62,19 @@ const movieClick = (event) => {
     method: "GET",
     url: `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=37bdb8486fb959414ee9164606b9ea9a`,
     success: (info) => {
-    const review = info.results[0].url;
-
-      //document.getElementById('review').textContent = review;
       const reviewLink = document.getElementById('reviewBtn');
-      reviewLink.setAttribute('href', review);
+      if (info.results > 0) {
+        const review = info.results[0].url;
+        reviewLink.setAttribute('href', review);
+      } else {
+        // $('#reviewBtn').hide();
+        // reviewLink.style.display = 'none';
+        reviewLink.textContent = 'No Reviews Avaliable';
+        reviewLink.setAttribute('href', "javascript: void(0)");
+        reviewLink.removeAttribute('target');
+        reviewLink.classList.add('disabled')
+      }
+
     }
   });
   if (target.id === 'content-close') {
